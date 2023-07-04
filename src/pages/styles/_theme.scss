@@ -1,0 +1,46 @@
+$darkBodyBgColor: #151521;
+$lightBodyBgColor: #f5f8fa;
+
+
+$themes: (
+  light: (
+    bgColor: #fff,
+    textColor: #000,
+    linkColor: #5e6278,
+    hoverBgColor: #F9F9F9,
+    activeBgColor:#F9F9F9,
+    
+  ),
+  dark: (
+    bgColor: #1e1e2d,
+    textColor: #eff2f7,
+    linkColor: #92929f,
+    hoverBgColor: "transparent",
+    activeBgColor:"transparent",
+
+    
+  ),
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

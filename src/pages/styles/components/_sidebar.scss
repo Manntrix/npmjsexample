@@ -1,0 +1,90 @@
+.aside{
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative;
+}
+
+#mainsidebar{
+    // width: 340px;
+    background-color: #1e1e2d;
+    height: 100vh;
+    box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+    // transition: width 0.3s ease;
+    z-index: 9999;
+    overflow: hidden;
+    border: unset;
+
+    .ps-sidebar-container{
+        background-color: unset;
+        
+        .ps-menu-button{
+            color: #9D9DA6;
+            font-size: 14px;
+
+            &:hover{
+                background-color: unset;
+                color: #fff;
+            }
+        }
+    }
+
+    .logo{
+        padding: 30px 0;
+        border-bottom: 1px dotted #ffffff3d;
+        margin-bottom: 20px;
+        .ps-menu-button{
+        color: #fff;
+        font-size: 20px;
+       }
+    }
+
+    .ps-submenu-content{
+        @include themify($themes) {
+            
+            color: themed('linkColor');
+          }
+        background-color: #1e1e2d !important;
+       
+        
+    }
+
+    .ps-submenu-content{
+        background-color: unset;
+    }
+    .ps-menu-icon{
+        color: #fff;
+        font-size: 20px;
+    }
+    .cmenu{
+        margin: 0px 20px;
+        color: #646477;
+        ul{
+            padding: 5px 0;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+    }
+
+   
+    
+}
+
+.menubtn{
+    @include themify($themes) {
+        background: themed('bgColor');
+      }
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 95px;
+    z-index: 99999999;
+    right: 0px;
+    cursor: pointer;
+    color: #009ef7;
+
+}

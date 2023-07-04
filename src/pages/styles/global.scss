@@ -1,0 +1,50 @@
+@import "init";
+
+*{
+    margin: unset;
+    padding: unset;
+
+}
+
+body.theme-light{
+    background: $lightBodyBgColor;
+}
+
+body.theme-dark{
+    background: $darkBodyBgColor;
+}
+
+main{
+    display: flex;
+    
+    .content{
+       
+        margin-top: 110px;
+    }
+}
+
+.wrapper-class {
+    padding: 1rem;
+    border: 1px solid #ccc;
+  }
+  .editor-class {
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border: 1px solid #ccc;
+  }
+  .toolbar-class {
+    border: 1px solid #ccc;
+  }
+  .code-view {
+    padding: 1rem;
+  
+    margin: 10px;
+  }
+  .text-area {
+    width: 100%;
+    background: black;
+    border: 1px solid #ccc;
+    color: white;
+    min-height: 200px;
+  }
+  

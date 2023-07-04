@@ -1,0 +1,124 @@
+#header{
+    z-index: 100;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 70px;
+    display: flex;
+    align-items: stretch;
+    background-color: #fff;
+    box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+    transition-property: width;
+    transition-duration: 300;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+
+    @include themify($themes) {
+      background: themed('bgColor');
+    }
+ 
+}
+
+#leftpanel{
+  ul{
+    display: flex;
+    list-style: none;
+    padding: unset;
+    margin: unset;
+
+    .active{
+      @include themify($themes) {
+        background: themed('activeBgColor');
+      }
+      a{
+        color: #009ef7 !important;
+      }
+    }
+
+    li{
+      margin: 5px;
+      border-radius: 2px;
+      padding: 5px 15px;
+
+    
+
+      &:hover{
+        @include themify($themes) {
+          background: themed('hoverBgColor');
+        }
+        
+      }
+      a{
+        text-decoration: none;
+        @include themify($themes) {
+          color: themed('linkColor');
+        }
+        font-weight: bold;
+        font-size: 14px;
+     
+        &:hover{
+          color: #009ef7;
+        }
+      }
+    }
+  }
+}
+
+#rightpanel{
+  ul{
+    display: flex;
+    list-style: none;
+    padding: unset;
+    margin: unset;
+  }
+  li{
+    margin: 0 10px;
+    padding: 5px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 2px;
+
+    @include themify($themes) {
+      color: themed('linkColor');
+    }
+
+    &:hover{
+      @include themify($themes) {
+        background: themed('hoverBgColor');
+      }
+      color: #009ef7;
+    }
+  }
+
+  .mode{
+    position: fixed;
+    border-radius: 0.475px;
+    box-shadow: rgba(82, 63, 105, 0.15) 0px 0px 50px 0px;
+    @include themify($themes) {
+      background: themed('bgColor');
+    }
+    opacity: 0;
+    z-index: 99999;
+    transform: translate(-125px, 18px);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    ul{
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+        li{
+          padding: 5px 20px;
+          margin: 5px 20px;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          span{
+            margin-right: 15px;
+          }
+        }
+        
+    }
+  }
+}
